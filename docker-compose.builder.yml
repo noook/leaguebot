@@ -1,0 +1,16 @@
+version: '2'
+services:
+    base:
+        image: node:latest
+        volumes:
+            - .:/usr/src/leaguebot/
+            - leaguebot_node_modules:/usr/src/leaguebot/node_modules
+        working_dir: /usr/src/leaguebot/
+    install:
+        extends:
+            service: base
+        command: npm i
+
+volumes:
+    leaguebot_node_modules:
+        external: true
