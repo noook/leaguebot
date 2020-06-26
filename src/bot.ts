@@ -4,7 +4,7 @@ export default class Bot extends Client {
   private config: CommandoClientOptions;
 
   constructor(config: CommandoClientOptions) {
-    super({ owner: config.owner });
+    super(config);
     this.config = config;
   }
 
