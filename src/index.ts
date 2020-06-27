@@ -1,11 +1,14 @@
 import { resolve } from 'path';
 import * as dotenv from 'dotenv';
 import Bot from './bot';
-import setupCommando from './commands';
+
+console.clear();
 
 dotenv.config({
   path: resolve(process.cwd(), '.env.local'),
 });
+
+import setupCommando from './commands';
 
 const bot = new Bot({
   owner: process.env.BOT_OWNER,
